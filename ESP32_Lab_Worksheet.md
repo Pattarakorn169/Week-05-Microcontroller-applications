@@ -390,18 +390,18 @@ Memory analysis complete!
 
 | Memory Section | Variable/Function | Address (ที่แสดงออกมา) | Memory Type |
 |----------------|-------------------|----------------------|-------------|
-| Stack | stack_var | 0x_______ | SRAM |
-| Global SRAM | sram_buffer | 0x_______ | SRAM |
-| Flash | flash_string | 0x_______ | Flash |
-| Heap | heap_ptr | 0x_______ | SRAM |
+| Stack | stack_var | 0x3ffb4550 | SRAM |
+| Global SRAM | sram_buffer | 0x3ffb16ac | SRAM |
+| Flash | flash_string | 0x3f407b48 | Flash |
+| Heap | heap_ptr | 0x3ffb5264 | SRAM |
 
 **Table 2.2: Memory Usage Summary**
 
 | Memory Type | Free Size (bytes) | Total Size (bytes) |
 |-------------|-------------------|--------------------|
-| Internal SRAM | _________ | 520,192 |
-| Flash Memory | _________ | varies |
-| DMA Memory | _________ | varies |
+| Internal SRAM | 380096 | 520,192 |
+| Flash Memory | 2097152 | varies |
+| DMA Memory | 303096 | varies |
 
 ### คำถามวิเคราะห์ (ง่าย)
 
@@ -596,20 +596,20 @@ void app_main() {
 
 | Test Type | Memory Type | Time (μs) | Ratio vs Sequential |
 |-----------|-------------|-----------|-------------------|
-| Sequential | Internal SRAM | _______ | 1.00x |
-| Random | Internal SRAM | _______ | ____x |
-| Sequential | External Memory | _______ | ____x |
-| Random | External Memory | _______ | ____x |
+| Sequential | Internal SRAM | 11646 | 1.00x |
+| Random | Internal SRAM | 11201 | 0.96x |
+| Sequential | External Memory | 29436 | 2.53x |
+| Random | External Memory | 32574 | 1.11x |
 
 **Table 3.2: Stride Access Performance**
 
 | Stride Size | Time (μs) | Ratio vs Stride 1 |
 |-------------|-----------|------------------|
-| 1 | _______ | 1.00x |
-| 2 | _______ | ____x |
-| 4 | _______ | ____x |
-| 8 | _______ | ____x |
-| 16 | _______ | ____x |
+| 1 | 10854 | 1.00x |
+| 2 | 5521 | 0.51x |
+| 4 | 2656 | 0.24x |
+| 8 | 1370 | 0.13x |
+| 16 | 658 | 0.06x |
 
 ### คำถามวิเคราะห์
 
@@ -842,19 +842,19 @@ void app_main() {
 
 | Metric | Core 0 (PRO_CPU) | Core 1 (APP_CPU) |
 |--------|-------------------|-------------------|
-| Total Iterations | _______ | _______ |
-| Average Time per Iteration (μs) | _______ | _______ |
-| Total Execution Time (ms) | _______ | _______ |
-| Task Completion Rate | _______ | _______ |
+| Total Iterations | 100 | 150 |
+| Average Time per Iteration (μs) | 63 | 9694 |
+| Total Execution Time (ms) | 4998 | 5940 |
+| Task Completion Rate | 100 | 100 |
 
 **Table 4.2: Inter-Core Communication**
 
 | Metric | Value |
 |--------|-------|
-| Messages Sent | _______ |
-| Messages Received | _______ |
-| Average Latency (μs) | _______ |
-| Queue Overflow Count | _______ |
+| Messages Sent | 10 |
+| Messages Received | 10 |
+| Average Latency (μs) | 15113 |
+| Queue Overflow Count | 0 |
 
 ### คำถามวิเคราะห์
 
@@ -874,24 +874,24 @@ void app_main() {
 ### แบบฟอร์มส่งงาน
 
 **ข้อมูลนักศึกษา:**
-- ชื่อ: _________________________________
-- รหัสนักศึกษา: _______________________
-- วันที่ทำการทดลอง: ___________________
+- ชื่อ: ภัทรกร วงศ์คำหาร
+- รหัสนักศึกษา: 67030169
+- วันที่ทำการทดลอง: 31/10/2568
 
 **Checklist การทดลอง:**
-- [ ] Environment setup สำเร็จ (ต่อเนื่องจากสัปดาห์ที่ 4)
-- [ ] Memory architecture analysis เสร็จสมบูรณ์
-- [ ] Cache performance testing เสร็จสมบูรณ์
-- [ ] Dual-core analysis เสร็จสมบูรณ์
-- [ ] รายงานผลการทดลองครบถ้วน
+- [✅] Environment setup สำเร็จ (ต่อเนื่องจากสัปดาห์ที่ 4)
+- [✅] Memory architecture analysis เสร็จสมบูรณ์
+- [ ✅] Cache performance testing เสร็จสมบูรณ์
+- [ ✅] Dual-core analysis เสร็จสมบูรณ์
+- [✅ ] รายงานผลการทดลองครบถ้วน
 
 **คะแนนประเมิน:**
-- การเตรียม Environment และ Continuity (15 คะแนน): _______
-- Memory Analysis (30 คะแนน): _______
-- Cache Performance (25 คะแนน): _______
-- Dual-Core Analysis (25 คะแนน): _______
-- รายงานและการเปรียบเทียบ (5 คะแนน): _______
-- **รวม (100 คะแนน): _______**
+- การเตรียม Environment และ Continuity (15 คะแนน): 9
+- Memory Analysis (30 คะแนน): 25
+- Cache Performance (25 คะแนน): 15
+- Dual-Core Analysis (25 คะแนน): 20
+- รายงานและการเปรียบเทียบ (5 คะแนน): 5
+- **รวม (100 คะแนน): 74 **
 
 **คำถามเพิ่มเติม:**
 1. เปรียบเทียบประสบการณ์การใช้ Docker ในสัปดาห์นี้กับสัปดาห์ที่ 4:
